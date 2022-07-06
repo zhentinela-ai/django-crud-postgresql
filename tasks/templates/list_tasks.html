@@ -12,7 +12,18 @@
 </head>
 <body>
   
-  <h1>Hello World</h1>
+  <h1>Tasks</h1>
+  
+  <form action="{% url 'create_task' %}" method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="title" placeholder="Write a title">
+
+    <textarea name="description" rows="3" placeholder="Write a description"></textarea>
+    
+    <button>Save</button>
+    
+  </form>  
   
 </body>
 </html>
